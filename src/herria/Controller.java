@@ -12,7 +12,8 @@ public class Controller implements ActionListener {
         this.model = model;
         this.view = view;
         view.setTitle("HERRIEN KUDEAKETA");
-        view.herrienTableModela.data = model.arrayListera();
+        view.herrienTableModela.data = model.
+                ();
         anadirActionListener(this);
     }
 
