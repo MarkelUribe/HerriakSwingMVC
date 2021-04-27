@@ -12,8 +12,8 @@ public class Controller implements ActionListener {
         this.model = model;
         this.view = view;
         view.setTitle("HERRIEN KUDEAKETA");
-        view.herrienTableModela.data = model.
-                ();
+        view.herrienTableModela.datuak = model.irakurri();
+
         anadirActionListener(this);
     }
 
@@ -21,9 +21,9 @@ public class Controller implements ActionListener {
         //GUIaren konponente guztiei gehitu listenerra
         view.jButtonGehitu.addActionListener(listener);
     }
-    
-    private void anadirKeyListener(ActionListener listener){
-        
+
+    private void anadirKeyListener(ActionListener listener) {
+
     }
 
     @Override
@@ -32,6 +32,17 @@ public class Controller implements ActionListener {
         //listenerrak entzun dezakeen eragiketa bakoitzeko. Konponenteek 'actionCommad' propietatea daukate
         switch (actionCommand) {
             case "GEHITU":
+
+                Herria h = new Herria(view.jTextFieldHerria.getText(), view.jComboBoxProbintzia.getSelectedItem().toString(),
+                        view.jCheckBoxHondartza.isSelected(), view.jTextAreaOharrak.getText());
+                model.txertatu(h);
+                break;
+            case "EZABATU":
+                
+                model.ezabatu("");
+                break;
+            default:
+
         }
     }
 }

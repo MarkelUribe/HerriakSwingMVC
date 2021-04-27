@@ -12,6 +12,11 @@ public class Herria {
         this.hondartza = hondartza;
         this.oharrak = oharrak;
     }
+
+    @Override
+    public String toString() {
+        return "izena:" + izena + ", probintzia:" + probintzia + ", hondartza:" + hondartza + ", oharrak:" + oharrak + "\n";
+    }
     
     public String getHondartza(){
         if(hondartza){

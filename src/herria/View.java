@@ -49,11 +49,11 @@ public class View extends javax.swing.JFrame {
         jComboBoxProbintzia = new javax.swing.JComboBox<>();
         jCheckBoxHondartza = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaOharrak = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable();
+        jTableHerriak = new javax.swing.JTable();
         jButtonGehitu = new javax.swing.JButton();
         jButtonEzabatu = new javax.swing.JButton();
         jButtonAldatu = new javax.swing.JButton();
@@ -85,14 +85,14 @@ public class View extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setText("Herria:");
 
-        jComboBoxProbintzia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxProbintzia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gipuzkoa", "Bizkaia", "Araba", "Nafarroa" }));
 
         jCheckBoxHondartza.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jCheckBoxHondartza.setText("Hondartza");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaOharrak.setColumns(20);
+        jTextAreaOharrak.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaOharrak);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setText("Oharrak:");
@@ -142,18 +142,8 @@ public class View extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Herrien zerrenda"));
 
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable);
+        jTableHerriak.setModel(herrienTableModela);
+        jScrollPane3.setViewportView(jTableHerriak);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -249,6 +239,9 @@ public class View extends javax.swing.JFrame {
 //            }
 //        });
 //    }
+    
+    HerrienTableModela herrienTableModela = new HerrienTableModela();
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton jButtonAldatu;
@@ -264,9 +257,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    javax.swing.JTable jTable;
     private javax.swing.JTable jTable1;
-    javax.swing.JTextArea jTextArea1;
+    javax.swing.JTable jTableHerriak;
+    javax.swing.JTextArea jTextAreaOharrak;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     javax.swing.JTextField jTextFieldHerria;
