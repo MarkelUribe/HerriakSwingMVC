@@ -91,7 +91,7 @@ public class Model {
 
 //        model.txertatu(h);
 //        model.txertatu(h2);
-        
         System.out.println(model.irakurri());
+        
     }
 }

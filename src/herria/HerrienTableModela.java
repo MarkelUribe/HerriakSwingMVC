@@ -17,6 +17,11 @@ public class HerrienTableModela extends AbstractTableModel {
     public int getColumnCount() {
         return zutabeIzenak.length;
     }
+    
+    @Override
+    public String getColumnName(int column){
+        return zutabeIzenak[column];
+    }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {

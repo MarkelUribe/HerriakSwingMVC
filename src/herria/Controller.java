@@ -2,6 +2,7 @@ package herria;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Controller implements ActionListener {
 
@@ -13,7 +14,7 @@ public class Controller implements ActionListener {
         this.view = view;
         view.setTitle("HERRIEN KUDEAKETA");
         view.herrienTableModela.datuak = model.irakurri();
-
+        view.herrienTableModela.fireTableChanged(null);
         anadirActionListener(this);
     }
 
@@ -36,13 +37,20 @@ public class Controller implements ActionListener {
                 Herria h = new Herria(view.jTextFieldHerria.getText(), view.jComboBoxProbintzia.getSelectedItem().toString(),
                         view.jCheckBoxHondartza.isSelected(), view.jTextAreaOharrak.getText());
                 model.txertatu(h);
+                view.herrienTableModela.datuak = model.irakurri();
+                view.herrienTableModela.fireTableChanged(null);
                 break;
             case "EZABATU":
-                
-                model.ezabatu("");
+                try{
+                    ArrayList<Herria> d = model.irakurri();
+                    model.ezabatu(d.get(view.jTableHerriak.getSelectedRow()).getIzena());
+                    view.herrienTableModela.datuak = model.irakurri();
+                    view.herrienTableModela.fireTableChanged(null);
+                    System.out.println("Ezabatu da");
+                }catch  (Exception E){
+                    System.out.println("Arazoa ezabatzerakoan");
+                }
                 break;
-            default:
-
         }
     }
 }
